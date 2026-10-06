@@ -8,8 +8,8 @@
 </head>
 <body>
     <button type="button" class="bg-blue-400">Hello</button>
-    <button type="button" class="bg-blue-500 w-22 h-9 font-mono text-white rounded-sm">Primary</button>
-    <button type="button" class="bg-red-600 w-22 h-9 font-mono text-white rounded-sm">Danger</button>
-    <button type="button" class="bg-yellow-400 w-22 h-9 font-mono rounded-sm">Warning</button>
+    <button type="button" class="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 w-22 h-9 text-white rounded-md">Primary</button>
+    <button type="button" class="bg-red-600 hover:bg-red-700 active:bg-red-800 w-22 h-9 text-white rounded-md">Danger</button>
+    <button type="button" class="bg-yellow-300 hover:bg-yellow-400 active:bg-yellow-500 w-22 h-9 rounded-md">Warning</button>
 </body>
 </html>
