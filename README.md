@@ -22,3 +22,4 @@ create .env file from .env.example by copying and renaming
 run laravel `composer run dev`
 
 laravel/php extensions
+emmet
