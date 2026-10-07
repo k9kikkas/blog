@@ -23,3 +23,5 @@ run laravel `composer run dev`
 
 laravel/php extensions
 emmet
+
+php artisan migrate:fresh
