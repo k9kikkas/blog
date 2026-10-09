@@ -2,6 +2,7 @@
 @section('content')
     <div class="container mx-auto">
         <h1>Sup!</h1>
+        {{ $posts->links() }}
         <div class="grid grid-cols-4 gap-2">
             @foreach ($posts as $post)
                 <div class="card bg-base-100 shadow-sm">
