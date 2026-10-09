@@ -29,4 +29,5 @@ run laravel `composer run dev`
 laravel/php extensions
 emmet
 
-php artisan migrate:fresh
+php artisan migrate:fresh (does only tables)
+php artisan migrate:fresh --seed (adds posts too)
