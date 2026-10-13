@@ -31,3 +31,6 @@ emmet
 
 php artisan migrate:fresh (does only tables)
 php artisan migrate:fresh --seed (adds posts too)
+
+git config --global user.name "first surname" 
+git config --global user.email "namename@gmail.com"
