@@ -6,7 +6,7 @@
             @csrf
             <fieldset class="fieldset">
                 <legend class="fieldset-legend">Title</legend>
-                <input name="title" type="text" class="input w-full @error('title') input-error @enderror" placeholder="Title" />
+                <input name="title" value="{{ old('title') }}" type="text" class="input w-full @error('title') input-error @enderror" placeholder="Title" />
                 @error('title')
                     <p class="label text-error">{{ $message }}</p>
                 @enderror
