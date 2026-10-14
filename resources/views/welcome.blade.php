@@ -13,7 +13,7 @@
                         <h2 class="card-title">{{ $post->title }}</h2>
                         <p>{{ $post->snippet }}</p>
                         <div class="card-actions justify-end">
-                            <a href="{{ route('post', ['post' => $post->id]) }}" class="btn btn-primary">@lang('Read More')</a>
+                            <a href="/post/{{ $post->id }}" class="btn btn-primary">@lang('Read More')</a>
                         </div>
                     </div>
                 </div>

@@ -13,8 +13,8 @@
             </fieldset>
             <fieldset class="fieldset">
                 <legend class="fieldset-legend">Content</legend>
-                <textarea name="content" class="textarea h-36 w-full @error('body') input-error @enderror" placeholder="Content"></textarea>
-                @error('body')
+                <textarea name="content" class="textarea h-36 w-full @error('content') input-error @enderror" placeholder="Content">{{ old('body') }}</textarea>
+                @error('content')
                     <p class="label text-error">{{ $message }}</p>
                 @enderror
             </fieldset>
