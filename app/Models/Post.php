@@ -11,9 +11,7 @@ class Post extends Model
     /** @use HasFactory<\Database\Factories\PostFactory> */
     use HasFactory;
 
-    use HasFactory;
-
-    protected $fillable = ['title', 'body']
+    protected $fillable = ['title', 'body'];
 
     public function snippet(): Attribute {
         return Attribute::get(function () {

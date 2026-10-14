@@ -2,7 +2,7 @@
 @section('content')
     <div class="container mx-auto">
 
-        <form action="{{ route('posts.update', $post }}" method="POST" class="card bg-base-300 shadow-sm w-2/3 mx-auto p-3">
+        <form action="{{ route('posts.update', $post) }}" method="POST" class="card bg-base-300 shadow-sm w-2/3 mx-auto p-3">
             @csrf
             @method('PUT')
             <fieldset class="fieldset">
