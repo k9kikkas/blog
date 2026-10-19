@@ -1,19 +1,21 @@
 <div class="card bg-base-100 shadow-sm">
-    {{-- <figure>
-                <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes" />
-            </figure> --}}
+    @if($post->image_path)
+    <figure>
+        <img src="{{ $post->image_path }}" />
+    </figure>
+    @endif
     <div class="card-body">
         <h2 class="card-title">{{ $post->title }}</h2>
         @isset($posts)
-        <p>{{ $post->snippet }}</p>
+            <p>{{ $post->snippet }}</p>
         @else
-        <p>{!! $post->displayBody !!}</p>
+            <p>{!! $post->displayBody !!}</p>
         @endisset
         <span class="text-base-content/70">{{ $post->user->name }}</span>
         <span class="text-base-content/70">{{ $post->created_at->diffForHumans() }}</span>
         <div class="card-actions justify-end">
             @isset($posts)
-            <a href="/post/{{ $post->id }}" class="btn btn-primary">@lang('Read More')</a>
+                <a href="/post/{{ $post->id }}" class="btn btn-primary">@lang('Read More')</a>
             @endisset
         </div>
     </div>
