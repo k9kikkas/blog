@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -37,6 +36,7 @@ class PostController extends Controller
         $post = new Post($request->validated());
         // $post->title = $request->input('title');
         // $post->body = $request->input('body');
+        $post->user()->associate(Auth::user());
         $post->save();
         return redirect()->route('posts.index');
     }
