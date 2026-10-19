@@ -16,7 +16,7 @@ class PostController extends Controller
     {
         /** @var App\Models\User $user */
         $user = Auth::user();
-        $posts = $user->post()->latest()->paginate(16);
+        $posts = $user->posts()->latest()->paginate(16);
         return view('posts.index', compact('posts'));
     }
 

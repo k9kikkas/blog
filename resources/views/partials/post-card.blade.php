@@ -10,9 +10,9 @@
         <p>{!! $post->displayBody !!}</p>
         @endisset
         <span class="text-base-content/70">{{ $post->user->name }}</span>
-        <span class="text-base-content/70">{{ $post->created_at->diffForHumans }}</span>
+        <span class="text-base-content/70">{{ $post->created_at->diffForHumans() }}</span>
         <div class="card-actions justify-end">
-            @isset
+            @isset($posts)
             <a href="/post/{{ $post->id }}" class="btn btn-primary">@lang('Read More')</a>
             @endisset
         </div>
