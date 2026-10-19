@@ -4,7 +4,7 @@
             </figure> --}}
     <div class="card-body">
         <h2 class="card-title">{{ $post->title }}</h2>
-        @isset
+        @isset($posts)
         <p>{{ $post->snippet }}</p>
         @else
         <p>{!! $post->displayBody !!}</p>
