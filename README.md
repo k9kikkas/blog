@@ -24,7 +24,10 @@ create .env file from .env.example by copying and renaming
 
 `php artisan key:generate`
 `php artisan migrate`
+`php artisan storage:link`
 run laravel `composer run dev`
+
+EXTRA INFO
 
 laravel/php extensions
 emmet
