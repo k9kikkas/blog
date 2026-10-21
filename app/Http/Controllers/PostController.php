@@ -36,7 +36,6 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-
         $post = new Post($request->validated());
         // $post->title = $request->input('title');
         // $post->body = $request->input('body');
