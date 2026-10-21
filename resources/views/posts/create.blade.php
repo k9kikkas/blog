@@ -2,11 +2,13 @@
 @section('content')
     <div class="container mx-auto">
 
-        <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data" card bg-base-300 shadow-sm w-2/3 mx-auto p-3">
+        <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data" card bg-base-300 shadow-sm w-2/3
+            mx-auto p-3">
             @csrf
             <fieldset class="fieldset">
                 <legend class="fieldset-legend">Title</legend>
-                <input name="title" value="{{ old('title') }}" type="text" class="input w-full @error('title') input-error @enderror" placeholder="Title" />
+                <input name="title" value="{{ old('title') }}" type="text"
+                    class="input w-full @error('title') input-error @enderror" placeholder="Title" />
                 @error('title')
                     <p class="label text-error">{{ $message }}</p>
                 @enderror
@@ -20,10 +22,21 @@
             </fieldset>
             <fieldset class="fieldset">
                 <legend class="fieldset-legend">Image</legend>
-                <input name="images[]" type="file" multiple accept="image/*" class="file-input w-full @error('images') file-input-error @enderror" />
+                <input name="images[]" type="file" multiple accept="image/*"
+                    class="file-input w-full @error('images') file-input-error @enderror" />
                 @error('images.*')
                     <p class="label text-error">{{ $message }}</p>
                 @enderror
+            </fieldset>
+            <fieldset class="fieldset">
+                <legend class="fieldset-legend">Tags</legend>
+                <select class="select">
+                    <option disabled selected>Pick a browser</option>
+                    @foreach($tags as $tag)
+                    <option>{{ $tag->name }}</option>
+                    @endforeach
+                </select>
+                <span class="label">Optional</span>
             </fieldset>
             <button class="btn btn-primary">Create</button>
         </form>
