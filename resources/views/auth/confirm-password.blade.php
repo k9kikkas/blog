@@ -1,27 +1,29 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
+@extends('partials.layout')
+@section('content')
+    <div class="container mx-auto">
+
+
+        <p class="mb-4">
+            @lang('This is a secure area of the application. Please confirm your password before continuing.')
+        </p>
+        <form method="POST" action="{{ route('password.confirm') }}">
+            @csrf
+
+            <!-- Confirm Password -->
+            <fieldset class="fieldset">
+                <legend class="fieldset-legend">@lang('Confirm Password')</legend>
+                <input name="password" type="password"
+                    class="input w-full @error('password') input-error @enderror required autofocus autocomplete="new-password" />
+                @error('password')
+                    <p class="label text-error">{{ $message }}</p>
+                @enderror
+            </fieldset>
+
+            <div class="flex justify-end mt-4">
+                <button type="submit" class="btn btn-primary">
+                    @lang('Confirm')
+                </button>
+            </div>
+        </form>
     </div>
-
-    <form method="POST" action="{{ route('password.confirm') }}">
-        @csrf
-
-        <!-- Password -->
-        <div>
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <div class="flex justify-end mt-4">
-            <x-primary-button>
-                {{ __('Confirm') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+@endsection
