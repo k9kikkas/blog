@@ -9,22 +9,21 @@ use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Spatie\Sluggable\HasSlug;
+use Override;
+use Spatie\Sluggable\Attributes\Sluggable;
 use Spatie\Sluggable\SlugOptions;
 
 #[Fillable(['name', 'email', 'password'])]
 #[Hidden(['password', 'remember_token'])]
 #[Sluggable(from: 'name', to: 'slug')]
-
 class User extends Authenticatable implements MustVerifyEmail
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable, HasSlug;
+    use HasFactory, Notifiable;
 
-    public function getSlugOptions(): SlugOptions {
-        return SlugOptions::create()
-            ->generateSlugsFrom('name')
-            ->saveSlugsTo('slug');
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
     }
 
     /**
