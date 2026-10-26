@@ -15,7 +15,7 @@ class PublicController extends Controller
     }
 
     public function user(User $user){
-        $posts = $user->posts()->withCount('comments')->latest()->simplePaginate(16);
+        $posts = $user->posts()->with('images', 'user', 'tags')->withCount('comments')->latest()->simplePaginate(16);
         return view('welcome', compact('posts'));
     }
 

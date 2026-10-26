@@ -3,7 +3,7 @@
     <div class="container mx-auto">
         @include('partials.post-card')
         <h1>Comments:</h1>
-        @foreach($post->comment as $comment)
+        @foreach($post->comments as $comment)
         <div class="card bg-base-100 shadow-sm mt-2">
             <div class="card-body">
                 <p{{ $comment->body }}</p>
