@@ -1,6 +1,6 @@
-<section>
+<section class="card bg-base-100 shadow-md">
     <header>
-        <h2 class="text-lg font-medium text-gray-900">
+        <h2 class="font-bold">
             {{ __('Update Password') }}
         </h2>
 

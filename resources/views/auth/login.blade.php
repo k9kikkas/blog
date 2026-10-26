@@ -2,7 +2,14 @@
 @section('content')
     <div class="container mx-auto">
         <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+        @if (session('status') === 'logged-in')
+            <div role="status" class="alert alert-success mb-4">
+                <span>
+                    @lang('You have logged in!')
+                </span>
+            </div>
+        @endif
+
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -20,7 +27,7 @@
             <!-- Password -->
             <fieldset class="fieldset">
                 <legend class="fieldset-legend">@lang('Password')</legend>
-                <input name="password" type="text"
+                <input name="password" type="password"
                     class="input w-full @error('password') input-error @enderror required autocomplete="current-password" />
                 @error('password')
                     <p class="label text-error">{{ $message }}</p>
@@ -29,10 +36,10 @@
 
             <!-- Remember Me -->
             <fieldset class="fieldset">
-                    <label class="label">
-                        <input name="remember" type="checkbox" checked="checked"class="checkbox">
-                        @lang('Remember me')
-                    </label>
+                <label class="label">
+                    <input name="remember" type="checkbox" checked="checked"class="checkbox">
+                    @lang('Remember me')
+                </label>
             </fieldset>
 
             <div class="flex items-center justify-end mt-4">
