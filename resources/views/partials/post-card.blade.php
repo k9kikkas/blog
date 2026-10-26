@@ -21,10 +21,11 @@
         @endisset
         <span class="text-base-content/70">
             <a href="{{ route('user', $post->user) }}" class="btn btn-link">
-                {{ post->user->name }}
+                {{ $post->user->name }}
             </a>
         </span>
         <span class="text-base-content/70">{{ $post->created_at->diffForHumans() }}</span>
+        <span class="text-base-content/70"><b>Comments:</b>{{ $post->comments_count }}</span>
         <div>
             @foreach ($post->tags as $tag)
                 <div class="badge badge-outline badge-primary">{{ $tag->name }}</div>
