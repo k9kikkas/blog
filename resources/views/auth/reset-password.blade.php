@@ -13,8 +13,7 @@
                 <fieldset class="fieldset">
                     <legend class="fieldset-legend">@lang('Email')</legend>
                     <input name="email" value="{{ old('email') }}" type="text"
-                        class="input w-full @error('email') input-error @enderror required
-                autofocus autocomplete="email" />
+                        class="input w-full @error('email') input-error @enderror" required autocomplete="email" />
                     @error('email')
                         <p class="label text-error">{{ $message }}</p>
                     @enderror
@@ -24,8 +23,7 @@
                 <fieldset class="fieldset">
                     <legend class="fieldset-legend">@lang('Password')</legend>
                     <input name="password" type="text"
-                        class="input w-full @error('password') input-error @enderror required
-                autofocus autocomplete="new-password" />
+                        class="input w-full @error('password') input-error @enderror" required autocomplete="new-password" />
                     @error('password')
                         <p class="label text-error">{{ $message }}</p>
                     @enderror
@@ -36,8 +34,7 @@
                 <fieldset class="fieldset">
                     <legend class="fieldset-legend">@lang('Confirm Password')</legend>
                     <input name="password_confirmation" type="text"
-                        class="input w-full @error('password_confirmation') input-error @enderror required
-                autofocus autocomplete="new-password" />
+                        class="input w-full @error('password_confirmation') input-error @enderror" required autocomplete="new-password" />
                     @error('password_confirmation')
                         <p class="label text-error">{{ $message }}</p>
                     @enderror
