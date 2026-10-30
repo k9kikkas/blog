@@ -31,8 +31,10 @@
                 <div class="badge badge-outline badge-primary">{{ $tag->name }}</div>
             @endforeach
         </div>
+        <div class="card-actions justify-end">
         @isset($posts)
-            <a href="/post/{{ $post->id }}" class="btn btn-primary">@lang('Read More')</a>
+            <a href="{{ route('post', $post) }}" class="btn btn-primary">@lang('Read More')</a>
         @endisset
+        </div>
     </div>
 </div>
