@@ -9,4 +9,16 @@ class Category extends Model
 {
     /** @use HasFactory<\Database\Factories\CategoryFactory> */
     use HasFactory;
+
+    public function posts() {
+        return $this->belongsTo(Post::class);
+    }
+
+    public function parent() {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function children() {
+        return $this->hasMany(Category::class);
+    }
 }
