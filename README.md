@@ -29,6 +29,9 @@ run laravel `composer run dev`
 
 EXTRA INFO
 
+git config --global user.name "first surname" 
+git config --global user.email "namename@gmail.com"
+
 laravel/php extensions
 emmet
 
